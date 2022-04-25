@@ -57,8 +57,15 @@ a {
 }
 
 .nav_link {
-    color: inherit;
-    font-weight: 700;
+  /* font-family: 'Montserrat' sans-serif; */
+  color: inherit;
+  font-weight: 700;
+}
+
+.nav_link:focus,
+.nav_link:hover {
+  color: #0e81b6
+  /* opacity: .75; */
 }
 
 .promo_container {
@@ -90,6 +97,12 @@ h1, h3, p {
   border-radius: 35px;
   background-color: #065B82;
   color: #ffffff;
+}
+
+.promo_button:focus, 
+.promo_button:hover {
+  background-color: #0e81b6;
+  box-shadow: 2px 2px 2px #002739;
 }
 
 .whyme_container {
@@ -153,6 +166,11 @@ h1, h3, p {
   color: #ffffff;
 }
 
+.fiz_button:focus,
+.fiz_button:hover {
+  box-shadow: 2px 2px 2px #002739;
+}
+
 .ur_button {
   border: 8px solid #065B82;
   font-size: 16px;
@@ -165,10 +183,16 @@ h1, h3, p {
   color: #065B82;
 }
 
+.ur_button:focus,
+.ur_button:hover {
+  box-shadow: 2px 2px 2px #002739;
+}
+
 .uslugi_container {
   padding: 8vh 15vw 0 15vw;
   display: flex;
   justify-content: space-between;
+  animation: appear 1s;
 }
 
 .uslugi_item {
@@ -178,6 +202,10 @@ h1, h3, p {
 .uslugi_item h3{
   text-align: center;
   color: #065B82;
+}
+
+.uslugi_icon {
+  height: 148px;
 }
 
 .articles_container {
@@ -197,7 +225,7 @@ h1, h3, p {
 
 .consultation_image {
   background-color: #CCCCCC;
-  margin-bottom: 3vh;
+  margin-bottom: 4vh;
 }
 
 .consultation_flex {
@@ -285,6 +313,13 @@ input[type=submit] {
   background-color: #065B82;
   color: #ffffff;
   font-size: 20px;
+  cursor: pointer;
+}
+
+input[type=submit]:focus,
+input[type=submit]:hover {
+  background-color: #0e81b6;
+  box-shadow: 2px 2px 2px #002739;
 }
 
 .contact_container {
@@ -352,3 +387,40 @@ input[type=submit] {
   height: 25vh;
   background-color: #002739;
 }
+
+.message {
+  display: flex;
+  justify-content: center;
+}
+
+.message .success {
+  color: green;
+  opacity: .75;
+  animation: appear 1s ease-out;
+  display: none;
+}
+
+@keyframes appear{
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#ur {
+  display: none;
+}
+
+.uslugi_item { transition: all .2s ease-in-out; }
+.uslugi_item:hover { transform: scale(1.1); }
+
+.whyme_item{ transition: all .2s ease-in-out; }
+.whyme_item:hover { transform: scale(1.1); }
+
+.contact_link { transition: all .2s ease-in-out; }
+.contact_link:hover { transform: scale(1.1); }

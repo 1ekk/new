@@ -6,6 +6,13 @@ form.addEventListener('submit', (event) => {
   let name = document.querySelector('[name="name"]').value;
   let phone = document.querySelector('[name="phone"]').value;
   let problem = document.querySelector('[name="problem"]').value;
+  const success = document.getElementById('success');
+
+  success.style.display = 'block';
+
+  setTimeout(() => {
+    success.style.display = 'none';
+  }, 4000);
 
   let message = `<b>❗️Новая заявка</b>: %0A Имя:  <i>${name}</i> %0A Телефон:  <i>${phone}</i> %0A Проблема: %0A <i>${problem}</i>`
 
