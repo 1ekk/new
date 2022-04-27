@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+/* html {
+  padding: 0;
+  margin: 0;
+} */
 
 body {
   font-family: "Inter", "Helvetica", "Arial", sans-serif;
@@ -11,6 +15,7 @@ body {
   place-items: left;
   margin: 0;
   font-size: 21px;
+  overflow-x: hidden;
 }
 
 header {
@@ -138,7 +143,7 @@ h1, h3, p {
 }
 
 .help_container {
-  margin-top: 5vh;
+  margin-top: 8vh;
 }
 
 .help_container h1 {
@@ -189,7 +194,7 @@ h1, h3, p {
 }
 
 .uslugi_container {
-  padding: 8vh 15vw 0 15vw;
+  padding: 8vh 15vw 5vh 15vw;
   display: flex;
   justify-content: space-between;
   animation: appear 1s;
@@ -208,24 +213,38 @@ h1, h3, p {
   height: 148px;
 }
 
+.article h3 {
+  color:#065B82;
+}
+
 .articles_container {
-  display: none;
+  /* display: none; */
+  padding: 5vh 15vw 5vh 15vw;
+  background-color: rgba(0, 39, 57, 0.05);
+  overflow: hidden;
+}
+
+.articles_container h1{
+  color: #002739;
+  font-weight: 900;
+  padding-left: 0;
+  margin-bottom: .3em;
 }
 
 .consultation_container h1 {
   line-height: 1.2;
   color: #002739;
-  margin-bottom: 3vh;
+  margin-bottom: 5vh;
   text-align: center;
 }
 
 .consultation_container {
-  padding: 6vh 15vw 0 15vw;
+  padding: 10vh 15vw 0 15vw;
 }
 
 .consultation_image {
   background-color: #CCCCCC;
-  margin-bottom: 4vh;
+  margin-bottom: 8vh;
 }
 
 .consultation_flex {
