@@ -85,12 +85,11 @@
 
 /* .carousel_button.prev {
   justify-self: flex-end;
-}
+} */
 
 .carousel_button.next {
-  justify-self: flex-start;
-  margin-right: auto;
-} */
+  visibility: hidden;
+}
 
 .animate_left {
   transform: translateX(-3000%);

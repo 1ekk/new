@@ -9,7 +9,7 @@ buttons.forEach(button => {
   button.addEventListener('click', () => {
     
     // test.style.overflowY = 'hidden';
-    const offset = button.dataset.carouselButton === "next" ? 1 : -1;
+    const offset = button.dataset.carouselButton === "prev" ? 1 : -1;
     const slides = document.querySelector("[data-slides]");
     const activeSlides = slides.querySelectorAll(".visible");
     const activeRight = slides.querySelectorAll(".appear_right");
@@ -53,15 +53,15 @@ buttons.forEach(button => {
     
     
     if (newFirstIndex != 0) {
-      buttons[1].style.visibility = 'visible'
+      buttons[0].style.visibility = 'visible'
     } else {
-      buttons[1].style.visibility = 'hidden'
+      buttons[0].style.visibility = 'hidden'
     }
 
     if (newSecondIndex == slides.children.length - 1) {
-      buttons[0].style.visibility = 'hidden'
+      buttons[1].style.visibility = 'hidden'
     } else {
-      buttons[0].style.visibility = 'visible'
+      buttons[1].style.visibility = 'visible'
     }
 
     
