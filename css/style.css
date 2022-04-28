@@ -219,15 +219,17 @@ h1, h3, p {
 
 .articles_container {
   /* display: none; */
-  padding: 5vh 15vw 5vh 15vw;
+  /* padding: 5vh 15vw 5vh 15vw; */
   background-color: rgba(0, 39, 57, 0.05);
   overflow: hidden;
 }
 
+
+
 .articles_container h1{
   color: #002739;
   font-weight: 900;
-  padding-left: 0;
+  padding-left: 15vw;
   margin-bottom: .3em;
 }
 

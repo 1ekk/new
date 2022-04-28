@@ -22,8 +22,7 @@
 
 
 .carousel{
-  display: grid;
- 
+  position: relative;
 }
 
 .slide_list {
@@ -34,7 +33,8 @@
   gap: 3vw;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding-left: 15vw;
+  padding-right: 15vw;
   
 }
 
@@ -60,25 +60,37 @@
   /* transform: translateX(0); */
 }
 
-.carousel_button{
+
+.btn_nav {
   position: absolute;
-  background: none;
-  border: none;
-  align-self: center;
-  cursor: pointer;
-  display: block;
+  width: 100%;
+  height: 0px;
+  top: 40%;
+  z-index: 999;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10vw;
+  padding-left: 10vw;
 }
 
-.carousel_button.prev {
-  left: 1rem;
-  display: none;
-  margin-left: 10vh;
+.carousel_button{
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* .carousel_button.prev {
+  justify-self: flex-end;
 }
 
 .carousel_button.next {
-  right: 1rem;
-  margin-right: 10vh;
-}
+  justify-self: flex-start;
+  margin-right: auto;
+} */
 
 .animate_left {
   transform: translateX(-3000%);

@@ -53,15 +53,15 @@ buttons.forEach(button => {
     
     
     if (newFirstIndex != 0) {
-      buttons[1].style.display = 'block'
+      buttons[1].style.visibility = 'visible'
     } else {
-      buttons[1].style.display = 'none'
+      buttons[1].style.visibility = 'hidden'
     }
 
     if (newSecondIndex == slides.children.length - 1) {
-      buttons[0].style.display = 'none'
+      buttons[0].style.visibility = 'hidden'
     } else {
-      buttons[0].style.display = 'block'
+      buttons[0].style.visibility = 'visible'
     }
 
     
