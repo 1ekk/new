@@ -3,8 +3,6 @@ let test = document.getElementsByTagName("*");
 // console.log(activeSlides[0])
 
 
-
-
 buttons.forEach(button => {
   button.addEventListener('click', () => {
     
