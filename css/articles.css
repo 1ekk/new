@@ -4,20 +4,20 @@
 
 
 .arrow {
-  border: solid black;
+  border: solid #002739;
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 10px;
 }
 
 .right {
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
+  transform: translateX(-6px) rotate(-45deg); 
+  -webkit-transform: translateX(-6px) rotate(-45deg);
 }
 
 .left {
-  transform: rotate(135deg);
-  -webkit-transform: rotate(135deg);
+  transform: translateX(6px) rotate(135deg);
+  -webkit-transform: translateX(6px) rotate(135deg);
 }
 
 
@@ -64,7 +64,7 @@
 .btn_nav {
   position: absolute;
   width: 100%;
-  height: 0px;
+  /* height: 0px; */
   top: 40%;
   z-index: 999;
   display: -webkit-flex;
@@ -78,18 +78,48 @@
 }
 
 .carousel_button{
-  background: none;
+  /* background-color: rgba(0, 0, 0, 0.04); */
+  /* box-shadow: silver 3px 3px; */
+  box-shadow: 0 0 5px silver;
+  background: transparent;
   border: none;
   cursor: pointer;
+  height: 50px;
+  width: 30px;
+  border-radius: 5px;
+  outline: none;
 }
 
-/* .carousel_button.prev {
-  justify-self: flex-end;
+.carousel_button:hover {
+  box-shadow: 0 0 10px silver; 
+}
+
+.carousel_button:active {
+  box-shadow: inset 0 0 5px silver; 
+}
+
+
+
+.carousel_button.prev {
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .carousel_button.prev > i {
+  transform: translateX(-10px);
 } */
 
 .carousel_button.next {
   visibility: hidden;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
+
 
 .animate_left {
   transform: translateX(-3000%);
