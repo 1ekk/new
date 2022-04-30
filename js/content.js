@@ -14,28 +14,11 @@ const closeSlide = document.querySelectorAll('#titleClose');
 const over = document.querySelector('#overlay')
 
 
-// function openS() {
-//   const modal = document.querySelector(openSlide.dataset.modalNumber)
-//   openModal(modal);
-//   if (modal.classList.contains('active')) {
-//     openSlide.removeEventListener('click', openS);
-//   } 
-// }
-
-
-// function closeS() {
-//   const modal = closeSlide.closest('.modal');
-//   closeModal(modal);
-//   console.log(modal)
-//   setTimeout(() => {if (modal.classList.contains('inactive')) openSlide.addEventListener('click', openS)}, 10);
-// }
-
-
 function openModal(modal) {
   if (modal == null) return
   modal.classList.add('active')
   over.classList.add('active')
-  // modal.classList.remove('inactive')
+
 }
 
 
@@ -43,30 +26,40 @@ function closeModal(modal) {
   if (modal == null) return
   modal.classList.remove('active')
   over.classList.remove('active')
-  // modal.classList.add('inactive')
 }
 
 
-// closeSlide.addEventListener('click', closeS); 
-// openSlide.addEventListener('click', openS);
-
 openSlide.forEach(slide => {
-  slide.addEventListener('click', () => {
-    const modal = document.querySelector(slide.dataset.modalNumber)
+  slide.addEventListener('click', openS)
+});
+
+
+function openS(e) {
+  const modal = document.querySelector(e.currentTarget.dataset.modalNumber)
     openModal(modal);
     document.body.style.overflow = 'hidden'
-  });
-});
+    if (modal.classList.contains('active')) {
+      e.currentTarget.removeEventListener('click', openS);
+    } 
+}
+
+
 
 closeSlide.forEach(slide => {
   slide.addEventListener('click', () => {
     const modal = slide.closest('.modal');
     closeModal(modal);
+    setTimeout(() => {if (!modal.parentElement.classList.contains('active')) modal.parentElement.addEventListener('click', openS)}, 10);
+    
   });
 });
 
 over.addEventListener('click', () => {
   const modals = document.querySelectorAll('.modal.active')
-  modals.forEach(modal => closeModal(modal))
+  modals.forEach(modal => {
+    closeModal(modal)
+    setTimeout(() => {if (!modal.parentElement.classList.contains('active')) modal.parentElement.addEventListener('click', openS)}, 10);
+  })
   document.body.style.overflow = 'auto'
+  // check = 1;
 });
