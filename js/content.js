@@ -49,6 +49,7 @@ closeSlide.forEach(slide => {
   slide.addEventListener('click', () => {
     const modal = slide.closest('.modal');
     closeModal(modal);
+    document.body.style.overflow = 'auto'
     setTimeout(() => {if (!modal.parentElement.classList.contains('active')) modal.parentElement.addEventListener('click', openS)}, 10);
     
   });
